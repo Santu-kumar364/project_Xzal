@@ -13,8 +13,10 @@ public class HomeController {
 	
 	@GetMapping("/home")
 	public String homeControllerHandler2() {
-		return "Santu, this is home controller ";
+		return "Praanzal, this is home controller ";
 	}
+
+
 	
 
 	@GetMapping("/codeWithSantu")

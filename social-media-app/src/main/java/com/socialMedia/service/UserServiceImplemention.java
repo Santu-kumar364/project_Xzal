@@ -66,7 +66,6 @@ public class UserServiceImplemention implements UserService {
 		
 		return reqUser;
 		
-		
 	}
 
 	@Override

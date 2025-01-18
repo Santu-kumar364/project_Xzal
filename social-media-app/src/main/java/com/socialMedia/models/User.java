@@ -1,10 +1,10 @@
 package com.socialMedia.models;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
-
+import java.util.Set;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import jakarta.persistence.Entity;                        // using Entity to create table
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -22,8 +22,8 @@ public class User {
 	private String email;
 	private String password;
 	private String gender;
-	private List<Integer> followers = new ArrayList<>();
-	private List<Integer> followings = new ArrayList<>();
+	private Set<Integer> followers = new HashSet<>();
+	private Set<Integer> followings = new HashSet<>();
 	
 	@JsonIgnore
 	@ManyToMany
@@ -34,7 +34,7 @@ public class User {
 	}
 
 	public User(Integer id, String firstName, String lastName, String email, String password, String gender,
-			List<Integer> followers, List<Integer> followings, List<Post> savedPost) {
+			Set<Integer> followers, Set<Integer> followings, List<Post> savedPost) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
@@ -95,19 +95,19 @@ public class User {
 		this.gender = gender;
 	}
 
-	public List<Integer> getFollowers() {
+	public Set<Integer> getFollowers() {
 		return followers;
 	}
 
-	public void setFollowers(List<Integer> followers) {
+	public void setFollowers(Set<Integer> followers) {
 		this.followers = followers;
 	}
 
-	public List<Integer> getFollowings() {
+	public Set<Integer> getFollowings() {
 		return followings;
 	}
 
-	public void setFollowings(List<Integer> followings) {
+	public void setFollowings(Set<Integer> followings) {
 		this.followings = followings;
 	}
 
@@ -122,6 +122,15 @@ public class User {
 	 
 	 
  }	
+
+
+
+
+
+
+
+
+
 
 
 
