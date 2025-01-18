@@ -56,6 +56,11 @@ public class UserServiceImplemention implements UserService {
 
 	@Override
 	public User followUser(Integer reqUserId, Integer userId2) throws UserException {
+
+		if (reqUserId.equals(userId2)) {
+			throw new IllegalArgumentException("A user cannot follow themselves.");
+		}
+
 		User reqUser = findUserById(reqUserId);
 		User user2 = findUserById(userId2);
 		
